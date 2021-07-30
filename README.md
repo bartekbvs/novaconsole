@@ -20,11 +20,11 @@ You can also provide a websocket URL directly on the command line:
     WARNING:novaconsole.client:connected to: ws://127.0.0.1:6083/?token=bdcea854-2566-4f3b-86ef-4791aba42eea
     WARNING:novaconsole.client:type "!." to disconnect
 
- ~~In either case, you will have an interactive connection to the serial
+<strike> In either case, you will have an interactive connection to the serial
 console of your Nova server.  You can type `~.` to disconnect.  If you
 find that the `~` conflicts with something (for example, `~` is also
 used as the default escape character by `ssh`), you can specify a new
-escape character with `-e`:  ~~
+escape character with `-e`: </strike>
 
 You can specify a new escape character with `-e`
 
