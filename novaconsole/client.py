@@ -127,11 +127,11 @@ class Client (object):
         if not data:
             return
 
-        if self.start_of_line and data == self.escape:
+        if self.start_of_line and data == self.escape.encode('ascii'):
             self.read_escape = True
             return
 
-        if self.read_escape and data == '.':
+        if self.read_escape and data == '.'.encode('ascii'):
             self.log.debug('exit on escape code')
             raise UserExit()
         elif self.read_escape:
@@ -140,7 +140,7 @@ class Client (object):
 
         self.ws.send(data)
 
-        if data == '\r':
+        if data == '\r'.encode('ascii'):
             self.start_of_line = True
         else:
             self.start_of_line = False
