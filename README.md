@@ -24,7 +24,7 @@ You can also provide a websocket URL directly on the command line:
 console of your Nova server.  You can type `~.` to disconnect.  If you
 find that the `~` conflicts with something (for example, `~` is also
 used as the default escape character by `ssh`), you can specify a new
-escape character with `-e`: ~~
+escape character with `-e`:  ~~
 
 You can specify a new escape character with `-e`
 
