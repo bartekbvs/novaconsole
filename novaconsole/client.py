@@ -24,7 +24,7 @@ except ImportError:
 
 class Client (object):
     def __init__(self, url,
-                 escape='~',
+                 escape='!',
                  close_wait=0.5,
                  subprotocols=None):
         self.url = url
