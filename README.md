@@ -43,11 +43,11 @@ console, and takes input from the serial console.
 
 You can install the package with `pip`:
 
-    pip install git+http://github.com/larsks/novaconsole.git
+    pip install git+https://github.com/bartekbvs/novaconsole.git
 
 Or you can clone the repository by hand and run `setup.py`:
 
-    git clone http://github.com/larsks/novaconsole.git
+    git clone https://github.com/bartekbvs/novaconsole.git
     cd novaconsole
     python setup.py install
 
