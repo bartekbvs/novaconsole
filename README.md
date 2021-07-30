@@ -12,19 +12,21 @@ With valid OpenStack credentials (`OS_USERNAME`, `OS_PASSWORD`,
 
     $ novaconsole my-server
     WARNING:novaconsole.client:connected to: ws://127.0.0.1:6083/?token=bdcea854-2566-4f3b-86ef-4791aba42eea
-    WARNING:novaconsole.client:type "~." to disconnect
+    WARNING:novaconsole.client:type "!." to disconnect
 
 You can also provide a websocket URL directly on the command line:
 
     $ novaconsole --url ws://127.0.0.1:6083/?token=bdcea854-2566-4f3b-86ef-4791aba42eea
     WARNING:novaconsole.client:connected to: ws://127.0.0.1:6083/?token=bdcea854-2566-4f3b-86ef-4791aba42eea
-    WARNING:novaconsole.client:type "~." to disconnect
+    WARNING:novaconsole.client:type "!." to disconnect
 
-In either case, you will have an interactive connection to the serial
+ ~~In either case, you will have an interactive connection to the serial
 console of your Nova server.  You can type `~.` to disconnect.  If you
 find that the `~` conflicts with something (for example, `~` is also
 used as the default escape character by `ssh`), you can specify a new
 escape character with `-e`:
+
+You can specify a new escape character with `-e`
 
     $ novaconsole -e@ my-server
     WARNING:novaconsole.client:connected to: ws://127.0.0.1:6083/?token=3fd11349-cd64-4dac-bbe0-68c49e9e1dc9
