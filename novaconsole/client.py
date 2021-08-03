@@ -40,6 +40,22 @@ class Client (object):
     def setup_logging(self):
         self.log = logging.getLogger('novaconsole.client')
 
+    def try_ssl_convert(self):
+        ssl_string = self.url.replace('ws://','wss://')
+        self.url = ssl_string
+        self.log.debug('connecting to with ssl: %s', self.url)
+        try:
+            self.ws = websocket.create_connection(
+                self.url,
+                subprotocols=self.subprotocols)
+            self.log.warn('connected to: %s', self.url)
+            self.log.warn('type "%s." to disconnect',
+                          self.escape)
+        except socket.error as e:
+            raise ConnectionFailed(e)
+        except websocket.WebSocketConnectionClosedException as e:
+            raise ConnectionFailed(e)
+    
     def connect(self):
         self.log.debug('connecting to: %s', self.url)
         try:
@@ -49,6 +65,8 @@ class Client (object):
             self.log.warn('connected to: %s', self.url)
             self.log.warn('type "%s." to disconnect',
                           self.escape)
+        except ValueError as e:
+            self.try_ssl_convert() 
         except socket.error as e:
             raise ConnectionFailed(e)
         except websocket.WebSocketConnectionClosedException as e:
