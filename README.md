@@ -51,5 +51,5 @@ Or you can clone the repository by hand and run `setup.py`:
 
     git clone https://github.com/bartekbvs/novaconsole.git
     cd novaconsole
-    python setup.py install
+    python3 setup.py install
 
